@@ -1,12 +1,6 @@
 import { NotificationService } from './services/notification.service';
 import { UserService } from './services/user.service';
-import {
-    ChangeDetectionStrategy,
-    Component,
-    DestroyRef,
-    signal,
-    ViewChild,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, signal, ViewChild } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { User } from './interfaces/user';
 import {
@@ -71,9 +65,7 @@ export class AppComponent {
                                     emailTaken: true,
                                 });
                             } else if (this.emailRef.hasError('emailTaken')) {
-                                delete this.emailRef.control.errors?.[
-                                    'emailTaken'
-                                ];
+                                delete this.emailRef.control.errors?.['emailTaken'];
                             }
 
                             this.emailPending.set(false);
@@ -81,9 +73,7 @@ export class AppComponent {
                     );
                 }),
                 catchError(() => {
-                    this.notificationService.error(
-                        'Ошибка при проверке email. Попробуйте позже',
-                    );
+                    this.notificationService.error('Ошибка при проверке email. Попробуйте позже');
                     return EMPTY;
                 }),
                 combineLatestWith(this.userForm.statusChanges!),
@@ -91,9 +81,7 @@ export class AppComponent {
             )
             .subscribe(([emailTaken, formStatus]) => {
                 this.enableSubmit.set(
-                    !emailTaken &&
-                        formStatus === 'VALID' &&
-                        !this.emailPending(),
+                    !emailTaken && formStatus === 'VALID' && !this.emailPending(),
                 );
             });
     }
