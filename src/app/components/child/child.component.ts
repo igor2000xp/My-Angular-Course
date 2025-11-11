@@ -4,6 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.scss'],
+  standalone: false,
 })
 export class ChildComponent {
   @Input('childColor') childColorProps!: string;
