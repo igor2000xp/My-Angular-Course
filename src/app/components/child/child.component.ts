@@ -16,6 +16,7 @@ import {
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.scss'],
+  standalone: false,
 })
 export class ChildComponent
   implements
