@@ -4,6 +4,7 @@ import { Component, HostBinding, HostListener } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  standalone: false,
 })
 export class AppComponent {
   colorProperty: string = 'orange';

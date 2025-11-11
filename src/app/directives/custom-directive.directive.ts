@@ -10,6 +10,7 @@ import {
 
 @Directive({
   selector: '[appCustomDirective]',
+  standalone: false,
 })
 export class CustomDirectiveDirective {
   @Input('color') colorProps!: string;
