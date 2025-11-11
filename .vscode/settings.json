@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 20,
+    "editor.fontSize": 12,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
@@ -8,7 +8,7 @@
     "editor.minimap.size": "proportional",
     "editor.mouseWheelZoom": false,
     "terminal.integrated.mouseWheelZoom": false,
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 0,
     "editor.inlayHints.enabled": "on",
     "editor.parameterHints.enabled": true,
     "editor.parameterHints.cycle": true,
@@ -25,5 +25,10 @@
     "accessibility.signals.noInlayHints": {
         "announcement": "off"
     },
-    "cSpell.words": ["toastr"]
+    "cSpell.words": ["toastr"],
+    "terminal.integrated.fontSize": 12,
+    "debug.console.fontSize": 12,
+    "scm.inputFontSize": 12,
+    "markdown.preview.fontSize": 12,
+    "editor.minimap.sectionHeaderFontSize": 12
 }

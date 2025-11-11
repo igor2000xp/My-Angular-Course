@@ -58,3 +58,9 @@ Working on a user registration form that demonstrates:
 - OnPush change detection with signals for performance
 - RxJS for async operations and complex form logic
 - JSON server for backend simulation
+
+
+
+
+
+

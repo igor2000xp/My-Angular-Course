@@ -26,3 +26,9 @@ Russian-speaking developers learning Angular framework
 
 ## Current Focus
 Template-driven forms with validation and RxJS integration (Branch: my/47-templ-forms-pract)
+
+
+
+
+
+

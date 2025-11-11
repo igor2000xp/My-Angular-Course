@@ -29,3 +29,9 @@ This project serves as a practical learning platform for Angular developers, pro
 - RxJS-powered async validation
 - Error handling and user feedback
 - Form state management
+
+
+
+
+
+

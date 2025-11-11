@@ -81,3 +81,9 @@ npm run format     # Format code with Prettier
 - Package manager: npm
 - Lock file: package-lock.json
 - Private package (not published)
+
+
+
+
+
+
