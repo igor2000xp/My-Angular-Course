@@ -28,8 +28,8 @@ export class CustomDirectiveDirective implements OnInit {
 
     this.element.nativeElement.style.color = 'red';
     this.renderer.setStyle(this.element.nativeElement, 'border-radius', '5px');
-    this.renderer.setStyle(this.element.nativeElement, 'border', '1px solid red');
-    this.renderer.setStyle(this.element.nativeElement, 'box-shadow', '0 0 10px 0 rgba(241, 227, 227, 0.5)');
+    this.renderer.setStyle(this.element.nativeElement, 'border', '2px solid red');
+    this.renderer.setStyle(this.element.nativeElement, 'box-shadow', '0 0 30px 24px rgba(241, 227, 227, 0.5)');
     this.renderer.setStyle(this.element.nativeElement, 'transition', 'all 1.9s ease');
   }
 

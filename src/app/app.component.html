@@ -2,4 +2,6 @@
 <!-- <p appCustomDirective style="color: lime" [color]="colorProperty" class="color">
   Параграф с директивой
 </p> -->
-<p [appCustomDirective]="colorProperty" someDirective (colorChange)="handleClick($event)">Параграф с директивой</p>
+<p [appCustomDirective]="colorProperty" color="red" someDirective (colorChange)="handleClick($event)">
+  Параграф с директивой
+</p>
