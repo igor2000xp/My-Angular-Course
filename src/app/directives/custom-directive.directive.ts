@@ -31,20 +31,20 @@ export class CustomDirectiveDirective implements OnInit {
     this.renderer.setStyle(this.element.nativeElement, 'border', '2px solid red');
     this.renderer.setStyle(this.element.nativeElement, 'box-shadow', '0 0 30px 24px rgba(241, 227, 227, 0.5)');
     this.renderer.setStyle(this.element.nativeElement, 'transition', 'all 1.9s ease');
+    this.renderer.addClass(this.element.nativeElement, 'custom-directive');
   }
 
   constructor(
     private element: ElementRef,
     private renderer: Renderer2,
-  ) {
-  }
+  ) {}
 
   @HostBinding('style.color') color: string = 'lime';
   @HostBinding('attr.color') attr: string = 'lime';
   @HostBinding('class.color') class: boolean = true;
   @HostBinding('style.background') bgColor = 'transparent';
 
-  //   @HostBinding('style.color') color = null; // или undefined
+  //   @HostBinding('style.color') color = null; // or undefined
   //   @HostBinding('attr.color') attr: any;
   //   @HostBinding('class.color') class = false;
 
