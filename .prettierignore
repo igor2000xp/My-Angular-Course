@@ -1,0 +1,41 @@
+# Ignore artifacts:
+build
+dist
+.angular
+.next
+.nuxt
+.output
+.parcel
+.svelte-kit
+.vite
+.vscode
+coverage
+node_modules
+tmp
+
+# Ignore logs:
+*.log
+*.log.*
+
+# Ignore generated files:
+*.min.js
+*.min.css
+package-lock.json
+yarn.lock
+
+# Ignore dotfiles:
+.DS_Store
+.env
+.env.*
+
+# Ignore specific files:
+src/main.ts
+src/polyfills.ts
+src/test.ts
+src/environments/environment*.ts
+src/app/app-routing.module.ts
+src/app/app.module.ts
+src/app/app.component.spec.ts
+src/app/components/child/child.component.spec.ts
+src/app/pipes/cut-text.pipe.spec.ts
+src/app/pipes/sort-data.pipe.spec.ts

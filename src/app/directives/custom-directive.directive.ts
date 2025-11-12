@@ -5,24 +5,38 @@ import {
   HostBinding,
   HostListener,
   Input,
+  OnInit,
   Output,
+  Renderer2,
 } from '@angular/core';
 
 @Directive({
   selector: '[appCustomDirective]',
   standalone: false,
 })
-export class CustomDirectiveDirective {
+export class CustomDirectiveDirective implements OnInit {
   @Input('color') colorProps!: string;
   @Input('appCustomDirective') appCustomDirectiveProps!: string;
 
-  @Output() colorChange = new EventEmitter();
+  @Output() colorChange = new EventEmitter<string>();
 
-  constructor(private element: ElementRef) {
+  ngOnInit(): void {
+    console.log('ngOnInit');
+
     console.log('appCustomDirective');
     console.log('element', this.element);
 
     this.element.nativeElement.style.color = 'red';
+    this.renderer.setStyle(this.element.nativeElement, 'border-radius', '5px');
+    this.renderer.setStyle(this.element.nativeElement, 'border', '1px solid red');
+    this.renderer.setStyle(this.element.nativeElement, 'box-shadow', '0 0 10px 0 rgba(241, 227, 227, 0.5)');
+    this.renderer.setStyle(this.element.nativeElement, 'transition', 'all 1.9s ease');
+  }
+
+  constructor(
+    private element: ElementRef,
+    private renderer: Renderer2,
+  ) {
   }
 
   @HostBinding('style.color') color: string = 'lime';
@@ -34,10 +48,10 @@ export class CustomDirectiveDirective {
   //   @HostBinding('attr.color') attr: any;
   //   @HostBinding('class.color') class = false;
 
-  //   @HostListener('document:click', ['$event.target']) handleClick(data: any) {
-  //     // console.log('click!');
-  //     console.log('data', data);
-  //   }
+    // @HostListener('document:click', ['$event.target']) handleClick(data: any) {
+    //   // console.log('click!');
+    //   console.log('data', data);
+    // }
 
   @HostListener('click') handleClick(data: any) {
     this.getRandomColor();
@@ -58,9 +72,8 @@ export class CustomDirectiveDirective {
   }
 
   getRandomColor() {
-    const newColor =
-      '#' +
-      (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase();
+    const newColor = '#' + (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase();
+    this.bgColor = newColor;
 
     this.colorChange.emit(newColor);
   }

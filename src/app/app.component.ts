@@ -15,7 +15,13 @@ export class AppComponent {
 
   @HostBinding('style.background') bgColor = 'transparent';
 
-  @HostListener('click') handleClick(data: any) {
-    console.log('click from AppComponent');
+  // @HostListener('click') handleClick(data: string) {
+  //   console.log('click from AppComponent', data);
+  //   this.bgColor = data;
+  // }
+
+  handleClick(data: string) {
+    console.log('click from AppComponent', data);
+    this.setColor(data);
   }
 }
