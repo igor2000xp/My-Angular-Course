@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { CutTextPipe } from './pipes/cut-text.pipe';
 
 @Component({
-    selector: 'app-root',
-    imports: [DatePipe, NgClass, NgStyle, CutTextPipe],
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
-    standalone: true
+  selector: 'app-root',
+  imports: [DatePipe, NgClass, NgStyle, CutTextPipe],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
 })
 export class AppComponent {
   title = 'angular-course-2026';

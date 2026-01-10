@@ -13,20 +13,20 @@
 
 <p data-testid="number-display">Number: {{ someNumber }}</p>
 
-<p data-testid="date-display">Date: {{ someDate | date:'shortDate' }}</p>
+<p data-testid="date-display">Date: {{ someDate | date: 'shortDate' }}</p>
 
 <hr />
 
 <p data-testid="text-default">
   {{
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, quae dolore eaque distinctio ducimus consequatur sed sunt aspernatur illo consequuntur earum ut vel, tempora nemo nobis accusantium fugit obcaecati accusamus."
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, quae dolore eaque distinctio ducimus consequatur sed sunt aspernatur illo consequuntur earum ut vel, tempora nemo nobis accusantium fugit obcaecati accusamus.'
       | cutText
   }}
 </p>
 
 <p data-testid="text-short">
   {{
-    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, quae dolore eaque distinctio ducimus consequatur sed sunt aspernatur illo consequuntur earum ut vel, tempora nemo nobis accusantium fugit obcaecati accusamus."
-      | cutText : 10
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, quae dolore eaque distinctio ducimus consequatur sed sunt aspernatur illo consequuntur earum ut vel, tempora nemo nobis accusantium fugit obcaecati accusamus.'
+      | cutText: 10
   }}
 </p>

@@ -17,18 +17,13 @@ const testBed = getTestBed();
 // Only check for 'platform' property (as 'platformRef' does not exist on TestBed)
 if (!testBed.platform) {
   try {
-    testBed.initTestEnvironment(
-      BrowserDynamicTestingModule,
-      platformBrowserDynamicTesting(),
-      { teardown: { destroyAfterEach: true } }
-    );
+    testBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting(), {
+      teardown: { destroyAfterEach: true },
+    });
   } catch (error) {
     // If already initialized (e.g., by Angular CLI), ignore the error
     // This can happen when Angular CLI's builder initializes it first
-    if (
-      !(error instanceof Error) ||
-      !error.message?.includes('already been initialized')
-    ) {
+    if (!(error instanceof Error) || !error.message?.includes('already been initialized')) {
       throw error;
     }
   }
