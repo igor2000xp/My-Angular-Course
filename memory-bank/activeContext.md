@@ -1,7 +1,7 @@
 # Active Context: My Angular Course
 
 ## Current Focus
-- Post-upgrade cleanup and verification.
+- Upgrading the project from Angular 19 to Angular 20.
 
 ## Recent Changes
 - Upgraded the project from Angular 18 to Angular 19.
@@ -10,8 +10,9 @@
 - Fixed version mismatch in `@angular/build`.
 
 ## Next Steps
-1. Explore Angular 19 features (e.g., linked signals, resource API).
-2. Continue with the course modules.
+1. Run `ng update @angular/core@20 @angular/cli@20`.
+2. Fix any breaking changes.
+3. Verify the application runs and tests pass.
 
 ## Active Decisions and Considerations
 - Using `ng update` as the primary upgrade mechanism.

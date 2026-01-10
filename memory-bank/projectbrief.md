@@ -9,5 +9,6 @@ This project is an Angular application developed as part of an Angular course.
 
 ## Scope
 - Current version: Angular 19.2.18
-- Goal: Maintain the project with latest Angular features.
+- Goal: Upgrade to Angular 20 (latest)
+- Implement features as requested by the course or user.
 - Implement features as requested by the course or user.
