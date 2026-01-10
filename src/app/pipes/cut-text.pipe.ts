@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'cutText',
+    name: 'cutText',
+    standalone: false
 })
 export class CutTextPipe implements PipeTransform {
   transform(value: string, maxLength = 100): string {

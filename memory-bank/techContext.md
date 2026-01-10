@@ -1,12 +1,13 @@
 # Tech Context: My Angular Course
 
 ## Technologies Used
-- **Angular**: v18.2.14 (Targeting v19 upgrade)
-- **TypeScript**: ~5.5.4
+- **Angular**: v19.2.18
+- **TypeScript**: ~5.6.0
 - **RxJS**: ~7.8.0
-- **Zone.js**: ~0.14.10
+- **Zone.js**: ~0.15.1
 - **Jasmine/Karma**: For unit testing.
 - **SCSS**: For styling.
+- **Build System**: Angular Application Builder (@angular/build)
 
 ## Development Setup
 - Node.js environment.

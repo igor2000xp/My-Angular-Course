@@ -1,17 +1,17 @@
 # Active Context: My Angular Course
 
 ## Current Focus
-- Upgrading the project from Angular 18 to Angular 19.
+- Post-upgrade cleanup and verification.
 
 ## Recent Changes
-- Initialized Memory Bank.
-- Identified current Angular version (18.2.14).
+- Upgraded the project from Angular 18 to Angular 19.
+- Migrated to the new Angular application builder.
+- Updated TypeScript to 5.6.
+- Fixed version mismatch in `@angular/build`.
 
 ## Next Steps
-1. Run `ng update` to check for available updates.
-2. Upgrade `@angular/core` and `@angular/cli` to v19.
-3. Fix any breaking changes or linter errors.
-4. Verify the application runs and tests pass.
+1. Explore Angular 19 features (e.g., linked signals, resource API).
+2. Continue with the course modules.
 
 ## Active Decisions and Considerations
 - Using `ng update` as the primary upgrade mechanism.
