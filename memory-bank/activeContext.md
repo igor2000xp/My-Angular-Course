@@ -1,18 +1,16 @@
 # Active Context: My Angular Course
 
 ## Current Focus
-- Upgrading the project from Angular 19 to Angular 20.
+- Post-upgrade cleanup and verification for Angular 20.
 
 ## Recent Changes
-- Upgraded the project from Angular 18 to Angular 19.
-- Migrated to the new Angular application builder.
-- Updated TypeScript to 5.6.
-- Fixed version mismatch in `@angular/build`.
+- Upgraded the project from Angular 19 to Angular 20.
+- Updated TypeScript to 5.9.3.
+- Verified all tests pass.
 
 ## Next Steps
-1. Run `ng update @angular/core@20 @angular/cli@20`.
-2. Fix any breaking changes.
-3. Verify the application runs and tests pass.
+1. Explore Angular 20 features.
+2. Continue with the course modules.
 
 ## Active Decisions and Considerations
 - Using `ng update` as the primary upgrade mechanism.

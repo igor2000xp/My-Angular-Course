@@ -5,9 +5,10 @@
 - Uses Modules (AppModule) as seen in `app.module.ts`.
 
 ## Key Technical Decisions
-- **Angular 19**: Successfully upgraded to Angular 19.
-- **Standalone Components**: Angular 19 default (migration added `standalone: false` to existing components/pipes).
-- **New Build System**: Using the new application builder (`@angular/build`).
+- **Angular 20**: Successfully upgraded to Angular 20.
+- **Standalone Components**: Angular 19/20 default (migration added `standalone: false` to existing components/pipes in v19).
+- **New Build System**: Using the Angular application builder (`@angular/build`).
+- **TypeScript**: Updated to v5.9.3.
 - **Pipes**: Custom pipe `CutTextPipe` implemented.
 - **Routing**: `AppRoutingModule` for navigation.
 

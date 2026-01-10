@@ -1,7 +1,7 @@
 # Progress: My Angular Course
 
 ## What Works
-- Project structure updated to Angular 19.
+- Project structure updated to Angular 20.
 - New build system (application builder) active.
 - `CutTextPipe` implemented and tested.
 - Basic routing configured.
@@ -10,7 +10,7 @@
 - Additional course-related features.
 
 ## Current Status
-- **Version**: 19.2.18
+- **Version**: 20.3.16
 - **Upgrade**: Completed
 
 ## Known Issues
