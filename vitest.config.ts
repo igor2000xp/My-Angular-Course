@@ -1,4 +1,5 @@
 // vitest.config.ts
+/// <reference types="vitest" />
 import { defineConfig } from 'vitest/config';
 import angular from '@analogjs/vite-plugin-angular';
 import { resolve } from 'path';

@@ -19,7 +19,7 @@
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
     "types": [
-      "vitest/globals"
+      "vitest/globals" // Gives you describe, it, expect types
     ]
   },
   "include": [
