@@ -1,10 +1,10 @@
-import { CommonModule, DatePipe } from '@angular/common';
+import { DatePipe, NgClass, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { CutTextPipe } from './pipes/cut-text.pipe';
 
 @Component({
     selector: 'app-root',
-    imports: [CommonModule, DatePipe, CutTextPipe],
+    imports: [DatePipe, NgClass, NgStyle, CutTextPipe],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
     standalone: true
