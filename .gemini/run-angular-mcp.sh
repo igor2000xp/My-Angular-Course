@@ -4,7 +4,7 @@
 
 PROJECT_DIR="/Volumes/MAC_DOCS/repos/angular/simonov/My-Angular-Course"
 
-# Change to project directory  
+# Change to project directory
 cd "$PROJECT_DIR"
 
 # Use npm exec with explicit package version to bypass local node_modules
