@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "angular-cli": {
+      "command": "ng",
+      "args": ["mcp"],
+      "cwd": "/Volumes/MAC_DOCS/repos/angular/simonov/My-Angular-Course",
+      "timeout": 60000,
+      "trust": true,
+      "env": {
+        "NG_CLI_ANALYTICS": "false"
+      }
+    }
+  }
+}
