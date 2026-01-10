@@ -33,6 +33,7 @@
     "@angular/compiler-cli": "^21.0.8",
     "@testing-library/jest-dom": "^6.9.1",
     "@types/node": "^25.0.5",
+    "@vitest/browser-playwright": "^4.0.16",
     "@vitest/coverage-v8": "^4.0.16",
     "@vitest/ui": "^4.0.16",
     "jsdom": "^27.4.0",

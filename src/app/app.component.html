@@ -1,10 +1,30 @@
-<p>
+<h1 data-testid="title">{{ title }}</h1>
+
+<section data-testid="user-info">
+  <p data-testid="user-name">Name: {{ user.name }}</p>
+  <p data-testid="user-age">Age: {{ user.age }}</p>
+</section>
+
+<a [title]="tooltip" data-testid="tooltip-link" href="#">Hover me</a>
+
+<div [ngStyle]="inlineStyles" data-testid="styled-box">Styled Box</div>
+
+<p [ngClass]="cssClass" data-testid="class-paragraph">This paragraph has dynamic class</p>
+
+<p data-testid="number-display">Number: {{ someNumber }}</p>
+
+<p data-testid="date-display">Date: {{ someDate | date:'shortDate' }}</p>
+
+<hr />
+
+<p data-testid="text-default">
   {{
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, quae dolore eaque distinctio ducimus consequatur sed sunt aspernatur illo consequuntur earum ut vel, tempora nemo nobis accusantium fugit obcaecati accusamus."
       | cutText
   }}
 </p>
-<p>
+
+<p data-testid="text-short">
   {{
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, quae dolore eaque distinctio ducimus consequatur sed sunt aspernatur illo consequuntur earum ut vel, tempora nemo nobis accusantium fugit obcaecati accusamus."
       | cutText : 10
