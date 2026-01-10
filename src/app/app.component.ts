@@ -1,10 +1,13 @@
+import { CommonModule, DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { CutTextPipe } from './pipes/cut-text.pipe';
 
 @Component({
     selector: 'app-root',
+    imports: [CommonModule, DatePipe, CutTextPipe],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
+    standalone: true
 })
 export class AppComponent {
   title = 'angular-course-2026';

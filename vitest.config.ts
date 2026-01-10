@@ -15,7 +15,13 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: [resolve(__dirname, 'src/test-setup.ts')],
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    // Exclude dist and other build output directories
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/out-tsc/**',
+      '**/.{idea,git,cache,output,temp}/**',
+    ],
     reporters: ['default'],
     sequence: {
       hooks: 'list',

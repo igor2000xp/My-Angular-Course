@@ -1,9 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
-import { CutTextPipe } from './pipes/cut-text.pipe';
 
 describe('AppComponent', () => {
     let fixture: ComponentFixture<AppComponent>;
@@ -12,8 +10,7 @@ describe('AppComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [CommonModule],
-            declarations: [AppComponent, CutTextPipe],
+            imports: [AppComponent],
         }).compileComponents();
 
         fixture = TestBed.createComponent(AppComponent);
