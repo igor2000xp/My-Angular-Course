@@ -1,6 +1,3 @@
-// Import setup first to initialize TestBed
-import '../test-setup';
-
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
