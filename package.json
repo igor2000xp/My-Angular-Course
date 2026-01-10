@@ -7,36 +7,42 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "npx json-server server/db.json -p 4201"
+    "server": "npx json-server server/db.json -p 4201",
+    "test:ui": "vitest --ui"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^20.0.0",
-    "@angular/common": "^20.0.0",
-    "@angular/compiler": "^20.0.0",
-    "@angular/core": "^20.0.0",
-    "@angular/forms": "^20.0.0",
-    "@angular/platform-browser": "^20.0.0",
-    "@angular/platform-browser-dynamic": "^20.0.0",
-    "@angular/router": "^20.0.0",
+    "@angular/animations": "^21.0.8",
+    "@angular/common": "^21.0.8",
+    "@angular/compiler": "^21.0.8",
+    "@angular/core": "^21.0.8",
+    "@angular/forms": "^21.0.8",
+    "@angular/platform-browser": "^21.0.8",
+    "@angular/platform-browser-dynamic": "^21.0.8",
+    "@angular/router": "^21.0.8",
     "ngx-toastr": "^19.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.0"
+    "zone.js": "~0.15.1"
   },
   "devDependencies": {
-    "@angular/build": "^20.0.0",
-    "@angular/cli": "^20.0.0",
-    "@angular/compiler-cli": "^20.0.0",
+    "@angular/build": "^21.0.5",
+    "@angular/cli": "~21.0.5",
+    "@angular/compiler-cli": "^21.0.8",
     "@types/jasmine": "~5.1.0",
+    "@types/karma-jasmine": "^4.0.5",
+    "@vitest/coverage-v8": "^4.0.16",
+    "@vitest/ui": "^4.0.16",
     "jasmine-core": "~5.1.0",
+    "jsdom": "^27.4.0",
     "json-server": "^1.0.0-beta.3",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
+    "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "prettier": "^3.5.3",
-    "typescript": "~5.8.3"
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.16"
   }
 }
