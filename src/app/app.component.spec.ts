@@ -2,20 +2,40 @@ import { beforeEach, describe, expect, it } from "vitest";
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { CutTextPipe } from './pipes/cut-text.pipe';
+import { DatePipe } from '@angular/common';
+import { MockPipe } from 'ng-mocks';
+
+// Create mock pipes with custom transform functions using ng-mocks
+// This isolates component tests from pipe implementation details
+const MockCutTextPipe = MockPipe(CutTextPipe, (value: string) => `mock_cut_${value}`);
+
+// const MockDatePipe = MockPipe(DatePipe, ((value: unknown) => `mock_date_${value}`) as any);
+// Replace the 'any' version with this:
+const MockDatePipe = MockPipe(
+  DatePipe,
+  ((value: string | number | Date | null | undefined): string | null => {
+    return value == null ? null : `mock_date_${value}`;
+  }) as DatePipe['transform']
+);
 
 describe('AppComponent', () => {
     let fixture: ComponentFixture<AppComponent>;
     let component: AppComponent;
-    const longText = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, quae dolore eaque distinctio ducimus consequatur sed sunt aspernatur illo consequuntur earum ut vel, tempora nemo nobis accusantium fugit obcaecati accusamus.';
 
     beforeEach(async () => {
-        await TestBed.configureTestingModule({
-            imports: [AppComponent],
-        }).compileComponents();
+      await TestBed.configureTestingModule({
+          imports: [AppComponent], // Здесь достаточно только самого компонента
+      })
+      .overrideComponent(AppComponent, {
+          remove: { imports: [CutTextPipe, DatePipe] },
+          add: { imports: [MockCutTextPipe, MockDatePipe] },
+      })
+      .compileComponents();
 
-        fixture = TestBed.createComponent(AppComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
+      fixture = TestBed.createComponent(AppComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
     });
 
     it('should create the app', () => {
@@ -119,42 +139,31 @@ describe('AppComponent', () => {
 
         // --- Date Display ---
         describe('Date Display', () => {
-            it('should render formatted date', () => {
-                // Fix the date to a specific moment to avoid flakiness
-                const fixedDate = new Date('2026-01-15T10:00:00');
-                component.someDate = fixedDate;
-                fixture.detectChanges();
-
+            it('should use mocked DatePipe', () => {
                 const dateEl = fixture.debugElement.query(By.css('[data-testid="date-display"]'));
                 expect(dateEl).toBeTruthy();
-                // Verify it contains "Date:" and formatted date content
+                // Verify mocked pipe was called - component integration test
+                expect(dateEl.nativeElement.textContent).toContain('mock_date_');
                 expect(dateEl.nativeElement.textContent).toContain('Date:');
-                expect(dateEl.nativeElement.textContent.trim().length).toBeGreaterThan(5);
             });
         });
 
         // --- CutText Pipe ---
         describe('CutText Pipe', () => {
-            it('should apply CutTextPipe and truncate text with default length', () => {
+            it('should use mocked CutTextPipe with default parameter', () => {
                 const pEl = fixture.debugElement.query(By.css('[data-testid="text-default"]'));
                 expect(pEl).toBeTruthy();
-
-                const renderedText = pEl.nativeElement.textContent.trim();
-                // Verify pipe is applied: text should be shorter than original and end with ellipsis
-                expect(renderedText.length).toBeLessThan(longText.length);
-                expect(renderedText.endsWith('...')).toBe(true);
+                // Verify mocked pipe was called - component integration test
+                // We no longer test pipe logic (that's in pipe unit tests), only that pipe is integrated
+                expect(pEl.nativeElement.textContent).toContain('mock_cut_');
             });
 
-            it('should apply CutTextPipe with custom length parameter', () => {
+            it('should use mocked CutTextPipe with custom length parameter', () => {
                 const pEl = fixture.debugElement.query(By.css('[data-testid="text-short"]'));
                 expect(pEl).toBeTruthy();
-
-                const renderedText = pEl.nativeElement.textContent.trim();
-                // Verify pipe is applied with custom length: should be shorter and end with ellipsis
-                expect(renderedText.length).toBeLessThan(longText.length);
-                expect(renderedText.endsWith('...')).toBe(true);
-                // Custom length (10) should result in shorter text than default (100)
-                expect(renderedText.length).toBeLessThan(110); // Less than default truncated length
+                // Verify mocked pipe was called - component integration test
+                // We no longer test pipe logic (that's in pipe unit tests), only that pipe is integrated
+                expect(pEl.nativeElement.textContent).toContain('mock_cut_');
             });
         });
     });
@@ -214,11 +223,12 @@ describe('AppComponent', () => {
             // Note: With zoneless change detection, we create fresh fixtures for tests that modify
             // component state after initial render. This avoids ExpressionChangedAfterItHasBeenCheckedError
             // which occurs when zoneless change detection detects a value change after it was checked.
-            // This is a necessary compromise - only 4 of 26 tests require this pattern.
+            // MockBuilder has already prepared the TestBed, we just create the fixture.
             let testFixture: ComponentFixture<AppComponent>;
             let testComponent: AppComponent;
 
             beforeEach(() => {
+                // MockBuilder has already prepared the TestBed, we just create the fixture
                 testFixture = TestBed.createComponent(AppComponent);
                 testComponent = testFixture.componentInstance;
             });
@@ -250,11 +260,12 @@ describe('AppComponent', () => {
             // Note: With zoneless change detection, we create fresh fixtures for tests that modify
             // component state after initial render. This avoids ExpressionChangedAfterItHasBeenCheckedError
             // which occurs when zoneless change detection detects a value change after it was checked.
-            // This is a necessary compromise - only 4 of 26 tests require this pattern.
+            // MockBuilder has already prepared the TestBed, we just create the fixture.
             let testFixture: ComponentFixture<AppComponent>;
             let testComponent: AppComponent;
 
             beforeEach(() => {
+                // MockBuilder has already prepared the TestBed, we just create the fixture
                 testFixture = TestBed.createComponent(AppComponent);
                 testComponent = testFixture.componentInstance;
             });
