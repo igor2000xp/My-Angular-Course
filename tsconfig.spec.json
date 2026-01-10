@@ -1,14 +1,30 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
+// {
+//   "extends": "./tsconfig.json",
+//   "compilerOptions": {
+//     "outDir": "./out-tsc/spec",
+//     "types": [
+//       "vitest/globals", // Gives you describe, it, expect types
+//       "node"
+//     ]
+//   },
+//   "include": [
+//     "src/**/*.spec.ts",
+//     "src/**/*.d.ts",
+//   ]
+// }
+
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
     "types": [
-      "jasmine"
+      "vitest/globals"
     ]
   },
   "include": [
     "src/**/*.spec.ts",
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "src/test-setup.ts" // Don't forget to include the setup file
   ]
 }

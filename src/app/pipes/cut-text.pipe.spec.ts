@@ -1,6 +1,7 @@
 import { CutTextPipe } from './cut-text.pipe';
+import { describe, it, expect, beforeEach } from 'vitest';
 
-fdescribe('CutTextPipe', () => {
+describe('CutTextPipe', () => {
   let pipe: CutTextPipe;
 
   beforeEach(() => {

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
     standalone: false
 })
 export class AppComponent {
-  title = 'aadasdasd';
+  title = 'angular-course-2026';
 
   user = {
     name: 'Yura',
